@@ -71,9 +71,39 @@ The script will:
 The analysis produces:
 
 - topic distributions by term
+
+  
+    <img width="787" height="422" alt="probs" src="https://github.com/user-attachments/assets/a00bebbf-967e-4773-81f9-5965642f8f6b" />
+    
+    *Without Gibbs method*
+    
+    <img width="741" height="428" alt="prob_gibbs" src="https://github.com/user-attachments/assets/b669800d-fdd0-4126-b1c1-c622ca6fece6" />
+  
+    *With Gibbs method*
+  
 - beta spread plots for topic differences
+
+    <img width="787" height="422" alt="beta spread" src="https://github.com/user-attachments/assets/37511e88-1b37-4dd4-9fcf-49d12ff48456" />
+
+    *Without Gibbs method*
+    
+    <img width="741" height="428" alt="beta_spread_gibbs" src="https://github.com/user-attachments/assets/e3fad481-d1f8-47ae-8381-9afb1b3ec40a" />
+  
+    *With Gibbs method*
+  
 - word cloud visualizations
+
+    <img width="647" height="439" alt="wordcloud" src="https://github.com/user-attachments/assets/d01fd0b7-d0b8-4343-b830-3aa70459b65c" />
+  
 - confusion matrix for classification performance
+
+    <img width="741" height="428" alt="conf matrix" src="https://github.com/user-attachments/assets/a1183378-9819-4b43-9ea1-6f520586845b" />
+
+    *Without Gibbs method*
+    
+    <img width="741" height="428" alt="conf_mat_gibbs" src="https://github.com/user-attachments/assets/5c8c2ac5-128c-43f9-adf3-c5d9d4fa8851" />
+
+    *With Gibbs method*
 
 ## 📌 Notes
 
