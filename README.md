@@ -85,6 +85,3 @@ The analysis produces:
 
 This project demonstrates a workflow for text preprocessing, topic modeling, and exploratory analysis in R using LDA and the `tm`/`tidytext` ecosystem.
 
----
-
-If you want, I can also make this README more polished for GitHub by adding a project banner, badges, and a screenshot section.
