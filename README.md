@@ -1,6 +1,6 @@
 # 📰 Latent Dirichlet Analysis of News Articles
 
-A compact R-based project for exploring topic modeling on a collection of news articles using Latent Dirichlet Allocation (LDA). The repository preprocesses text, builds a document-term matrix, fits an LDA model, and visualizes topic distributions and classification results.
+A compact R-based project for exploring topic modeling on a collection of news articles using Latent Dirichlet Allocation (LDA). The repository preprocesses text, builds a document-term matrix, fits LDA models using both standard and Gibbs sampling approaches, and evaluates their performance.
 
 ## ✨ What this project does
 
@@ -21,7 +21,7 @@ A compact R-based project for exploring topic modeling on a collection of news a
 
 ## 🧠 Project objective
 
-This project analyzes a set of news articles and groups them into latent themes using LDA. In particular, the workflow separates article content into broad topic groups and evaluates how well the model aligns with known article categories such as sports and technology.
+This project analyzes a set of news articles and groups them into latent themes using LDA. In particular, the workflow separates article content into broad topic groups and evaluates how well the discovered topics align with the original article categories.
 
 ## 🛠️ Requirements
 
@@ -70,40 +70,65 @@ The script will:
 
 The analysis produces:
 
-- topic distributions by term
+- **Topic distributions by term**
 
-  
+  <div align="center">
     <img width="787" height="422" alt="probs" src="https://github.com/user-attachments/assets/a00bebbf-967e-4773-81f9-5965642f8f6b" />
     
     *Without Gibbs method*
-    
+  </div>
+  
+  <div align="center">
     <img width="741" height="428" alt="prob_gibbs" src="https://github.com/user-attachments/assets/b669800d-fdd0-4126-b1c1-c622ca6fece6" />
-  
+    
     *With Gibbs method*
-  
-- beta spread plots for topic differences
+  </div>
 
+- **Beta spread plots for topic differences**
+
+  <div align="center">
     <img width="787" height="422" alt="beta spread" src="https://github.com/user-attachments/assets/37511e88-1b37-4dd4-9fcf-49d12ff48456" />
-
-    *Without Gibbs method*
     
+    *Without Gibbs method*
+  </div>
+  
+  <div align="center">
     <img width="741" height="428" alt="beta_spread_gibbs" src="https://github.com/user-attachments/assets/e3fad481-d1f8-47ae-8381-9afb1b3ec40a" />
-  
-    *With Gibbs method*
-  
-- word cloud visualizations
-
-    <img width="647" height="439" alt="wordcloud" src="https://github.com/user-attachments/assets/d01fd0b7-d0b8-4343-b830-3aa70459b65c" />
-  
-- confusion matrix for classification performance
-
-    <img width="741" height="428" alt="conf matrix" src="https://github.com/user-attachments/assets/a1183378-9819-4b43-9ea1-6f520586845b" />
-
-    *Without Gibbs method*
     
-    <img width="741" height="428" alt="conf_mat_gibbs" src="https://github.com/user-attachments/assets/5c8c2ac5-128c-43f9-adf3-c5d9d4fa8851" />
-
     *With Gibbs method*
+  </div>
+
+- **Word cloud visualizations**
+
+  <div align="center">
+    <img width="647" height="439" alt="wordcloud" src="https://github.com/user-attachments/assets/d01fd0b7-d0b8-4343-b830-3aa70459b65c" />
+  </div>
+
+- **Confusion matrix for classification performance**
+
+  <div align="center">
+    <img width="741" height="428" alt="conf matrix" src="https://github.com/user-attachments/assets/a1183378-9819-4b43-9ea1-6f520586845b" />
+    
+    *Without Gibbs method*
+  </div>
+  
+  <div align="center">
+    <img width="741" height="428" alt="conf_mat_gibbs" src="https://github.com/user-attachments/assets/5c8c2ac5-128c-43f9-adf3-c5d9d4fa8851" />
+    
+    *With Gibbs method*
+  </div>
+
+## 🔄 Gibbs Sampling vs. Standard LDA
+
+The Gibbs sampling method improves upon the standard LDA approach through more sophisticated inference:
+
+- **Standard LDA**: Uses variational inference, which is computationally efficient but makes simplifying assumptions that can lead to suboptimal topic distributions.
+- **Gibbs Sampling**: Employs a Markov Chain Monte Carlo (MCMC) approach that iteratively samples from the posterior distribution of topic assignments. This produces more accurate and stable topic estimates, resulting in:
+  - **Better topic separation**: Topics are more distinct and less overlapping
+  - **Improved classification performance**: The confusion matrix shows better alignment between predicted and actual article categories
+  - **More stable term distributions**: Topic-term probabilities converge to more reliable values after sufficient iterations
+
+By comparing outputs from both methods, this project demonstrates that while Gibbs sampling requires more computational resources, it typically yields superior topic modeling results and more meaningful document-topic associations.
 
 ## 📌 Notes
 
@@ -114,4 +139,3 @@ The analysis produces:
 ## ⭐ Acknowledgements
 
 This project demonstrates a workflow for text preprocessing, topic modeling, and exploratory analysis in R using LDA and the `tm`/`tidytext` ecosystem.
-
